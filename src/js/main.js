@@ -1,11 +1,31 @@
+// Modal
+const modal = document.querySelector('#myModal')
+const openModal = document.querySelector('#openModal');
+const closeModal = document.querySelector('#closeModal');
 
 
+openModal.addEventListener('click', function(){
+    modal.style.display = 'flex';
+});
+
+closeModal.addEventListener('click', () => { 
+    modal.style.display = 'none';
+})
+
+modal.addEventListener('click', (event) => {
+    if (event.target == modal) modal.style.display = 'none';
+})
+
+
+
+
+// Crear una tarea
 const boton = document.querySelector('#boton_crear');
 boton.addEventListener('click', function (event){
     event.preventDefault();
     const texto = document.querySelector('#texto').value
-    console.log(texto)
     const nuevaTarea = new Nuevatarea(texto)
+    modal.style.display = 'none';
     nuevaTarea.crear()
 })
 
@@ -21,14 +41,15 @@ class Nuevatarea {
         tareaText.textContent = this.texto
 
         const eliminarBtn = document.createElement('button')
-        eliminarBtn.textContent = 'X'; 
+        eliminarBtn.textContent = 'x'; 
         eliminarBtn.addEventListener('click', () => this.eliminar());
 
         tareaDiv.appendChild(tareaText)
-        tareaDiv.appendChild(eliminarBtn)
+        tareaDiv.classList.add('task')
 
-        this.elemento = tareaDiv
+        this.elemento = tareaDiv 
         document.querySelector('#tasks').appendChild(tareaDiv)
+        document.querySelector('#tasks').appendChild(eliminarBtn)
     }
 
     eliminar() {
