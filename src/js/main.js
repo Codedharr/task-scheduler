@@ -2,7 +2,7 @@
 const modal = document.querySelector('#myModal')
 const openModal = document.querySelector('#openModal');
 const closeModal = document.querySelector('#closeModal');
-import { saveTasks, STORAGE_TASK } from './storage.js';
+import { saveTasks, STORAGE_TASK, loadTasks } from './storage.js';
 import { creartarea } from './UI/uicontroller.js';
 import { Task } from './models/task.js';
 
@@ -34,48 +34,7 @@ boton.addEventListener('click', function (event){
     modal.style.display = 'none';
 })
 
-//Renderizar tarea 
-//Falta agregar la funcion de renderizar
-
-// class Nuevatarea {
-//     constructor (texto) {
-//         this.texto = texto
-//         this.elemento = null;
-//     }
-
-//     crear() {
-//         const tareaDiv = document.createElement('div')
-//         const tareaText = document.createElement('p')
-//         tareaText.textContent = this.texto
 
 
-//         tareaText.addEventListener('click', () => {
-//             tareaText.classList.toggle('tachada')
-//         })
 
-//         const eliminarBtn = document.createElement('button')
-//         eliminarBtn.textContent = 'x'; 
-//         eliminarBtn.addEventListener('click', () => this.eliminar());
-        
-//         tareaDiv.appendChild(eliminarBtn)
-//         tareaDiv.appendChild(tareaText)
-//         tareaDiv.classList.add('task')
-
-//         this.elemento = tareaDiv 
-//         document.querySelector('#tasks').appendChild(tareaDiv)
-//     }
-
-//     eliminar() {
-//         if(this.elemento) {
-//             this.elemento.remove()
-//         }
-//     }
-
-//     actualizar() { 
-        
-//     }
-// }
-
-
-console.log(STORAGE_TASK)
 
