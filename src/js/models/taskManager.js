@@ -1,5 +1,5 @@
-import { STORAGE_TASK, saveTasks } from "../storage";
-import { Task } from "./task";
+import { STORAGE_TASK, saveTasks } from "../storage.js";
+import { Task } from "./task.js";
 
 export class TaskManager {
         constructor () {
