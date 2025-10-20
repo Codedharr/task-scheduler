@@ -21,11 +21,15 @@ export class Task {
         }
     }
     static fromJSON(data){
-        return new Task(data.id, data.name, data)
+        return new Task(
+            data.id, 
+            data.name, 
+            data.priority,
+            {
+            completed: data.completed,
+            duration: data.duration,
+            dependencies: data.dependencies
+            }
+        )
     }
 }
-
-
-//Terminar de consolidar el TaskManager
-
-

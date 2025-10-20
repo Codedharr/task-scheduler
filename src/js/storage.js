@@ -12,4 +12,7 @@ export function loadTasks() {
     }
 }
 
+
 export let STORAGE_TASK = loadTasks();
+
+

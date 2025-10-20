@@ -1,11 +1,12 @@
 //Terminar de realizar la class de task. Y realizar el renderizado de las tareas que están alojas en el localstorage IMPORTANTE TERMINAR MAÑANA Y SEGUIR AVANZANDO EN EL PROYECTO. QUE SE DEBE TERMINAR ANTES DEL 15 DE SEPTIEMBRE 2025. DANIEL TIENES QUE CENTRARTE Y DEJAR DE PONER TU INTERES EN OTRAS COSAS QUE NO TE VAN A AYUDAR. VAMOS YO CREO QUE TI
-import {uiController} from './UI/uicontroller.js'
+import { UIController } from './UI/uiController.js'
 import { TaskManager } from './models/taskManager.js';
 
 
 const fomrEl = document.querySelector('#formEl');
 const inpuntEl = document.querySelector('#inputEl');
 const listEl = document.querySelector('#listEl')
+
 
 
 const modal = document.querySelector('#myModal')
@@ -26,9 +27,6 @@ modal.addEventListener('click', (event) => {
 
 
 // Crear tarea
-const tasks = new TaskManager()
-const newUI  = new uiController(tasks, fomrEl, inpuntEl, listEl)
+const tasks = new TaskManager() 
+const newUI  = new UIController(tasks, fomrEl, inpuntEl, listEl)
 newUI.init()
-
-
-

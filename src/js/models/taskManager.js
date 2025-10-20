@@ -22,10 +22,12 @@ export class TaskManager {
         }
         
         getTasks(){
-            return this.tasks
+            return [...this.tasks] 
         }
 
         _save(){
             saveTasks(this.tasks.map(task => task.toJSON()))
         }
 }
+
+console.log(new TaskManager())
