@@ -2,10 +2,10 @@
 import { Task } from "../models/task.js";
 
 export class UIController {
-    constructor(taskManager, fomrEl, inpuntEl, listEl){
+    constructor(taskManager, fomrEl, inputEl, listEl){
         this.taskManager = taskManager;
         this.formEl = fomrEl;
-        this.inpuntEl = inpuntEl; 
+        this.inpuntEl = inputEl; 
         this.listEl = listEl; 
     }
 
@@ -22,7 +22,7 @@ export class UIController {
 
 
             try {
-                const newTask = new Task(Date.now().toString(), name, 1);
+                // const newTask = new Task(Date.now().toString(), name, 1); no debería estar aquí
                 this.taskManager.addTask(newTask);
                 this.inpuntEl.value = '';
                 this.renderTasks()

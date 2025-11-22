@@ -1,35 +1,35 @@
 export class Task {
-    constructor (id, name, priority, { completed = false, duration = 0, dependencies = []} = {}) {
+    constructor (id, projectId, name, status, priority, duration) {
         this.id = id; 
+        this.projectId = projectId,
         this.name = name;
-        this.priority = priority;
-        this.completed = completed; 
-        this. duration = duration;
-        this.dependencies = dependencies;
+        this.status = status; 
+        this.priority = priority; 
+        this.duration = duration;
     }
+
     toggleCompleted() {
         this.completed = !this.completed
     }
+
     toJSON() {
         return {
             id: this.id,
-            name: this.name,    
-            completed: this.completed,
-            duration: this.duration,
+            projectId: this.projectId,
+            name: this.name,
+            status: this.status,   
             priority: this.priority,
-            dependencies: this.dependencies
+            duration: this.duration,
         }
     }
+    
     static fromJSON(data){
         return new Task(
             data.id, 
             data.name, 
+            data.status,
             data.priority,
-            {
-            completed: data.completed,
-            duration: data.duration,
-            dependencies: data.dependencies
-            }
+            data.duration
         )
     }
 }
